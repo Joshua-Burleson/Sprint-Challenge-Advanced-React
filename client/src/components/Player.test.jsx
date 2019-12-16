@@ -12,7 +12,6 @@ describe('Player Component', () => {
     it('Includes passed prop value in render (USA)', () => {
         const virtualPlayer = rtl.render(<Player player={{name: "Meg", country: "USA", searches: 100}}/>);
         const usa = virtualPlayer.queryByText(/USA/i);
-
         expect(usa).toBeInTheDocument();
     });
 });
