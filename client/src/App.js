@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useGreenText } from './custom-hooks/utils';
 import Wrapper from './components/Wrapper';
 import './App.css';
 
 function App() {
+  const [greenText, setGreenText] = useGreenText(false);
   return (
     <div className="App">
       <header className="App-header">
+        <h1>WORLD CUP PLAYERS</h1>
+        <button onClick={() => setGreenText(!greenText)}>Toggle Green Mode {greenText ? 'Off' : 'On'}</button>
         <Wrapper />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
